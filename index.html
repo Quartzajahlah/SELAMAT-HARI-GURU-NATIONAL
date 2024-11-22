@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SELAMAT HARI GURU SMP FIKRI</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom, #FFD700, #FFCC00);
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+    }
+
+    .container {
+      text-align: center;
+      animation: fadeIn 2s ease-in-out;
+      height: 90%;
+      width: 90%;
+      overflow-y: auto;
+      padding: 1rem;
+      box-sizing: border-box;
+    }
+
+    .title {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      color: red;
+    }
+
+    h2 {
+      color: blue;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .open-btn {
+      font-size: 2rem;
+      color: #2575fc;
+      background-color: transparent;
+      border: 2px solid #2575fc;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .open-btn:hover {
+      background-color: #2575fc;
+      color: white;
+    }
+
+    .message {
+      display: none;
+      font-size: 1.5rem;
+      margin-top: 2rem;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .hidden-content {
+      display: none;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* Mengatur ukuran gambar menjadi 1024x1024 */
+    .hidden-content img {
+      width: 491px;
+      height: 490px;
+      margin-bottom: 10px;
+    }
+
+    .effects {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+    }
+
+    .effect {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      animation: grow-fade 3s infinite ease-in-out;
+    }
+
+    .effect.star {
+      background: radial-gradient(circle, #FFFFFF, #FFD700);
+    }
+
+    .effect.heart {
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle, #FF69B4, #FF1493);
+      clip-path: polygon(50% 0%, 61% 19%, 78% 19%, 100% 50%, 78% 81%, 50% 100%, 22% 81%, 0% 50%, 22% 19%, 39% 19%);
+    }
+
+    .effect.flower {
+      background: radial-gradient(circle, #FF4500, #FF6347);
+    }
+
+    @keyframes grow-fade {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      50% {
+        transform: scale(1.5);
+        opacity: 1;
+      }
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Animasi untuk teks bergerak */
+    @keyframes moveText {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .creator-info {
+      font-weight: bold;
+      font-size: 1.5rem;
+      display: none;
+      margin-top: 20px;
+    }
+
+    .creator-info span1 {
+      display: inline-block;
+      background-color: #37fdff;
+      color: black;
+      padding: 5px 10px;
+      animation: moveText 10s linear infinite;
+    }
+    
+    .creator-info span {
+  display: inline-block;
+  background-color: red; /* Ganti dengan merah */
+  color: white; /* Agar teks tetap terlihat jelas */
+  padding: 5px 10px;
+  animation: moveText 10s linear infinite;
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">SELAMAT HARI GURU</h1>
+    <b><h2 class="title">SMP FIKRI</h2></b>
+    <b><p class="subtitle">"Guru adalah pelita ilmu yang tak pernah padam."</p></b>
+    <button class="open-btn" id="openButton" onclick="showMessage()">BUKA</button>
+    <div class="message">
+      <p>
+        Pada tanggal 25 November 2024 ini, kami, FIQRI dan AGUS, ingin mengucapkan terima kasih yang sebesar-besarnya kepada semua guru yang telah dengan tulus mengajar, membimbing, dan memberikan ilmu serta nilai-nilai kehidupan yang tak ternilai harganya.
+      </p>
+      <p>
+        "Untuk semua guru di SMP FIKRI, terima kasih atas ilmu, semangat, dan keteladanan yang telah kalian berikan. FIQRI dan AGUS merasa sangat beruntung bisa belajar dan tumbuh di bawah bimbingan yang penuh kasih dan sabar. Selamat Hari Guru!"
+      </p>
+    </div>
+    <div class="hidden-content" id="hiddenContent">
+      <img src="SMP FIKRI.jpg" alt="Terima Kasih Guru" />
+      <audio controls autoplay loop>
+        <source src="Terimakasih.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <!-- Menambahkan informasi pembuat -->
+    <div class="creator-info" id="creatorInfo">
+      <span><b><p>⬆️LAGU⬆️</p></b></span>
+      <p>FIQRI 81</P>
+      <p>AGUS 74</p>
+      <p><span1>PEMBUAT WEBSITE: AGUS</span1></p>
+      <p><span1>YANG CODING: FIQRI</span1></p>
+    </div>
+  </div>
+  <div class="effects" id="effects"></div>
+
+  <script>
+    function showMessage() {
+      document.querySelector('.message').style.display = 'block';
+      document.getElementById('hiddenContent').style.display = 'block'; // Tampilkan gambar dan audio
+      const button = document.getElementById('openButton');
+      button.innerText = 'BACA DAN SCROL KEBAWAH'; // Ubah teks tombol menjadi "BACA YA"
+      button.disabled = true; // Nonaktifkan tombol setelah diklik
+
+      // Menampilkan informasi pembuat
+      document.getElementById('creatorInfo').style.display = 'block';
+    }
+
+    function createEffect() {
+      const effectsContainer = document.getElementById('effects');
+      const effect = document.createElement('div');
+      const types = ['star', 'heart', 'flower'];
+      const type = types[Math.floor(Math.random() * types.length)];
+
+      effect.classList.add('effect', type);
+      effect.style.left = Math.random() * 100 + '%';
+      effect.style.top = Math.random() * 100 + '%';
+
+      effectsContainer.appendChild(effect);
+
+      setTimeout(() => {
+        effectsContainer.removeChild(effect);
+      }, 3000);
+    }
+
+    setInterval(createEffect, 200);
+  </script>
+</body>
+</html>
